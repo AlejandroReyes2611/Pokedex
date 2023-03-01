@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Navigator } from './Navigator';
 import ContadorScreen from '../components/ContadorScreen';
+import { ProfileStack } from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,6 +37,11 @@ export const TabBottomNavigator = () => {
         name="Contador"
         component={ContadorScreen}
         options={{ tabBarLabel: 'Contador', tabBarIcon: ({ color, size }: TabBarIconProps) => <Icon name="ios-calculator-outline" size={size} color={color} />}}
+      />
+      <Tab.Screen
+        name="Perfil"
+        component={ProfileStack}
+        options={{ tabBarLabel: 'Perfil', tabBarIcon: ({ color, size }: TabBarIconProps) => <Icon name="ios-person-outline" size={size} color={color} />}}
       />
     </Tab.Navigator>
   );
